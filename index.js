@@ -95,8 +95,8 @@ app.post("/login",(req,res)=>{
     var e=req.body.name;
     var p=req.body.password;
     const search=(e,p)=>{
-        const q="SELECT * FROM newusers WHERE email =? AND password =?;";
-        con.query(q,[e,p],(err,r)=>{
+        const q="SELECT * FROM `newusers` WHERE `email`= '" + e + "' AND `password` = '" + p + "';";
+        con.query(q,(err,r)=>{
             if(err)
                 throw(err);
             if(r.length==0)
