@@ -102,8 +102,10 @@ app.post("/login",(req,res)=>{
             if(r.length==0)
                 res.send("No such user");
             else
+            {
                 console.log(r);
                 res.send("Logged in");
+            }
         })
     }
 })
